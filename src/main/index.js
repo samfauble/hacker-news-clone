@@ -18,7 +18,7 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <Route exact path="/" component={TopArticles} />
+                    <Route exact path="/top" component={TopArticles} />
                     <Route  path="/new" component={NewArticles} />
                     <Route exact path="/compare" component={CompareInstructions} />
                     <Route path="/compare/results" component={Results} />   
