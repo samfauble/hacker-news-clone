@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from "./Navbar"
 import Card from "./Card"
+import {Link} from "react-router-dom"
 import {FaUserFriends, FaAward, FaCheckCircle} from "react-icons/fa"
 
 
@@ -40,9 +41,12 @@ export class CompareInstructions extends React.Component {
                     <button className="lightButton">Enter</button>
             
                 </div>
-                <button
+                <Link
+                to="/compare/results"
                 style={{margin: "auto"}}
-                className="moveCenter lightButton">Compare</button>
+                className="moveCenter noUnderline lightButton">
+                    Compare
+                </Link>
                 
             </React.Fragment>
         )

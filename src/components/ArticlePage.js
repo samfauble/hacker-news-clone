@@ -2,7 +2,7 @@ import Navbar from "../components/Navbar"
 import Container from "../components/Container"
 import React from 'react'
 
-function ArticlePage() {
+function ArticlePage({children}) {
     return (
         <div>
             

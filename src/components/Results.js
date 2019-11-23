@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 import {FaCrown, FaSadCry} from "react-icons/fa"
 import Card from "./Card"
 import Navbar from "./Navbar"
@@ -20,12 +21,13 @@ function Results(props) {
                         <FaSadCry size={150} />
                 </Card>
             </div>
-            <button 
+            <Link
+                to="/compare" 
                 className="lightButton moveCenter"
                 style={{margin: "auto",
                     marginTop: 80}}>
                     Reset
-            </button>
+            </Link>
         </React.Fragment>
     )
 }

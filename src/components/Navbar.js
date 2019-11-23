@@ -5,29 +5,29 @@ import CompareInstructions from './CompareInstructions'
 
 function Navbar() {
     return (
+        <React.Fragment>
         <div className="navContainer">
-        <ul className="navList">
-            <Link 
-                className="navButton"
+            <ul className="navList">
+                <Link 
+                className="noUnderline"
                 to="/">
                     Top
-            </Link>
-            <Link 
-                className="navButton"
-                to="/new">
+                </Link>
+                <Link 
+                to="/new" 
+                className="noUnderline">
                     New
-            </Link>
-            <Link 
-                className="navButton"
-                to="/compare">
+                </Link>
+                <Link 
+                to="/compare" 
+                className="noUnderline">
                     Compare
-            </Link>
-            <button className="lightThemeButton">😎</button> 
-        </ul>
-        <Route exact path="/" component={ArticlePage} />
-        <Route exact path="/new" component={ArticlePage} />
-        <Route path="/compare" component={CompareInstructions} />
+                </Link>
+                <button className="lightThemeButton">😎</button>
+            </ul>
         </div>
+        </React.Fragment>
+
     )
 }
 

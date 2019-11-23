@@ -5,9 +5,11 @@ import ArticlePage from "../components/ArticlePage"
 import Comments from "../components/Comments"
 import Navbar from "../components/Navbar"
 import AuthorPage from "../components/AuthorPage"
+import TopArticles from "../components/TopArticles"
+import NewArticles from "../components/NewArticles"
 import CompareInstructions from "../components/CompareInstructions"
 import Results from "../components/Results"
-import {BrowserRouter as Router} from "react-router-dom"
+import {BrowserRouter as Router, Route} from "react-router-dom"
 
 class App extends React.Component {
 
@@ -16,7 +18,10 @@ class App extends React.Component {
         return (
             <Router>
                 <div>
-                    <ArticlePage />  
+                    <Route exact path="/" component={TopArticles} />
+                    <Route  path="/new" component={NewArticles} />
+                    <Route exact path="/compare" component={CompareInstructions} />
+                    <Route path="/compare/results" component={Results} />   
                 </div>
             </Router>
         )
