@@ -1,0 +1,129 @@
+body {
+    background: #beecfc;
+    font-family: sans-serif;
+}
+
+
+.navList {
+    width: 85%;
+    margin: 40px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.navButton {
+    font-weight: 700;
+    list-style: none;
+    margin-left: 20px;
+}
+
+.lightThemeButton {
+    height: 55px;
+    width: 55px;
+    margin-left: 65%;
+    margin-right: 10px;
+    background: hsl(240, 91%, 55%);
+    box-shadow: 2px 1px 2px #01015e, 3px 2px 3px black;
+    font-size: 30px;
+    
+}
+
+.info {
+    font-weight: 600;
+    margin-bottom: 5px;
+
+    color: rgb(104, 104, 104)
+}
+
+.header {
+    color: #c00010;
+}
+
+.moveCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.moveLeft {
+    margin-left: 67px; 
+}
+
+.spaceAround {
+    display: flex;
+    justify-content: space-around;
+}
+
+.container {
+    width: 85%;
+    margin: 20px 40px;
+    padding-left: 20px;
+}
+
+.card {
+    display: block;
+    flex-direction: column;
+    align-items: left;
+    justify-items: space-around;
+    margin-bottom: 15px;
+    padding: 3px 25px 15px;
+    background: #4e4e4e4b;
+    border-radius: 5px;
+    box-shadow: .8px 1.3px 3px #181818ab
+}
+
+.cardLine {
+    padding: 0px;
+    border: 1px solid grey;
+}
+
+
+//CompareInstructions
+.instructions {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin-top: 50px;
+}
+
+.morePadding {
+    padding: 50px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5% 10% 5% 0%;
+
+}
+
+input {
+    margin: 10px;
+    height: 35px;
+    width: 170px;
+    box-shadow: 0.5px 0.3px inset;
+    border-radius: 3px;
+    margin-left: 15%;
+}
+
+.lightButton {
+    border: none;
+    margin: 8px;
+    border-radius: 2px;
+    height: 40px;
+    width: 120px;
+    color: hsl(0, 0%, 84%);
+    background: rgb(31, 31, 31);
+    font-size: 20px;
+    box-shadow: 3px 2px 2px rgb(0, 0, 104), 4px 3px 2px #272727;
+    transition: 0.3s; 
+}
+
+button:hover {
+    box-shadow: 0px -4px 5px #64bedb, 0px 4px 5px #64bedb, -4px 0px 5px #64bedb, 4px 0px 5px #64bedb;
+    transition: 0.3s;
+}
