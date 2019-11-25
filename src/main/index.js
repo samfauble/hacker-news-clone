@@ -10,19 +10,38 @@ import NewArticles from "../components/NewArticles"
 import CompareInstructions from "../components/CompareInstructions"
 import Results from "../components/Results"
 import {BrowserRouter as Router, Route} from "react-router-dom"
+import {ThemeProvider} from "../contexts/ThemeContext"
 
 class App extends React.Component {
 
+    constructor(props) {
+        super(props)
+    
+        this.state = {
+             theme: "light",
+             toggleTheme: ()=>{this.setState(({theme})=>({
+                 theme: theme==="light" ? "dark" : "light"
+             })
+             
+             )}
+        }
+        
+    }
+    
    
     render() {
         return (
             <Router>
-                <div>
-                    <Route exact path="/top" component={TopArticles} />
-                    <Route  path="/new" component={NewArticles} />
-                    <Route exact path="/compare" component={CompareInstructions} />
-                    <Route path="/compare/results" component={Results} />   
-                </div>
+                <ThemeProvider value={this.state}>
+                    <div className={this.state.theme}> 
+                        <div className="container">
+                            <Route exact path="/" component={TopArticles} />
+                            <Route path="/new" component={NewArticles} />
+                            <Route exact path="/compare" component={CompareInstructions} />
+                            <Route path="/compare/results" component={Results} />   
+                        </div>
+                    </div>
+                </ThemeProvider>
             </Router>
         )
     }

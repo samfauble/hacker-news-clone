@@ -5,7 +5,7 @@ import CommentCard from "../components/CommentCard"
 export class Container extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div className="kontainer">
                 <CommentCard />
                 <CommentCard /> 
                 <CommentCard /> 

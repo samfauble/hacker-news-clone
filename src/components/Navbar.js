@@ -2,32 +2,43 @@ import React, {useState} from 'react'
 import {NavLink, Route} from "react-router-dom"
 import ArticlePage from './ArticlePage'
 import CompareInstructions from './CompareInstructions'
+import {ThemeConsumer} from "../contexts/ThemeContext"
 
 function Navbar() {
-    const [navItem, setNavItem] = useState("top")
-
-    const navList = ["top", "new", "compare"]
-
-    const handleClick = (item)=> setNavItem(`${item}`)
-
     return (
-        <React.Fragment>
-        <div className="navContainer">
-            <ul className="navList">
-                {navList.map((item)=>(
-                    <NavLink
-                    key={item} 
-                    to={`/${item}`}
-                    className="noUnderline"
-                    onClick= {()=> handleClick(item)}
-                    activeStyle= {{color: "red"}}>
-                        {item}
-                    </NavLink>
-                ))}
-                <button className="lightThemeButton">😎</button>
-            </ul>
-        </div>
-        </React.Fragment>
+        <ThemeConsumer>
+            {({theme, toggleTheme})=>(
+                <React.Fragment>
+                    <div className="navContainer">
+                        <ul className={`navList`}>
+                                <NavLink 
+                                    exact to="/"
+                                    className={`noUnderline ${theme}NavButton`}
+                                    activeStyle= {{color: "#e43442"}}>
+                                        Top
+                                </NavLink>
+                                <NavLink 
+                                    to="/new"
+                                    className={`noUnderline ${theme}NavButton`}
+                                    activeStyle= {{color: "#e43442"}}>
+                                        New
+                                </NavLink>
+                                <NavLink 
+                                    exact to="/compare"
+                                    className={`noUnderline ${theme}NavButton`}
+                                    activeStyle= {{color: "#e43442"}}>
+                                        Compare
+                                </NavLink>
+                             <button 
+                                className={`${theme}ThemeButton`}
+                                onClick={()=>toggleTheme()}>
+                                 {theme==="light" ? <>😎</> : <>✨</>}
+                                 </button>
+                        </ul>
+                    </div>
+                </React.Fragment>             
+            )}
+        </ThemeConsumer>
 
     )
 }

@@ -1,7 +1,37 @@
+$lightBackgroundColor:  #beecfc;
+$lightHeaderColor: red;
+$lightTertiaryColor:  rgb(175, 0, 15) ;
+$lightNavColor: #0d0d4b;
+
+$darkBackgroundColor: #0d0d4b;
+$darkHeaderColor:  red;
+$darkTertiaryColor:  rgb(153, 43, 52);
+$darkNavColor:#beecfc;
+
+body, html, #app {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
 body {
-    background: #beecfc;
+    background: $lightBackgroundColor;
     font-family: sans-serif;
 }
+
+.dark {
+    color: $darkHeaderColor;
+    background: $darkBackgroundColor;
+    min-height: 100%;
+}
+
+.container {
+    max-height: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+
 
 
 .navList {
@@ -15,10 +45,18 @@ body {
     font-weight: 400;
 }
 
-.navButton {
-    font-weight: 700;
+.lightNavButton {
+    font-weight: 800;
     list-style: none;
     margin-left: 20px;
+    color: $lightNavColor;
+}
+
+.darkNavButton {
+    font-weight: 800;
+    list-style: none;
+    margin-left: 20px;
+    color: $darkNavColor;
 }
 
 .lightThemeButton {
@@ -26,21 +64,67 @@ body {
     width: 55px;
     margin-left: 65%;
     margin-right: 10px;
-    background: rgb(18, 18, 114);
-    box-shadow: 2px 1px 2px #01015e, 3px 2px 3px black;
-    font-size: 30px;
-    
+    background: $lightNavColor;
+    box-shadow: 2px 1px 2px $lightNavColor, 3px 2px 3px black;
+    font-size: 30px;  
 }
 
-.info {
+.darkThemeButton {
+    height: 55px;
+    width: 55px;
+    margin-left: 65%;
+    margin-right: 10px;
+    background: $darkNavColor;
+    box-shadow: 2px 1px 2px $darkNavColor, 3px 2px 3px black;
+    font-size: 30px; 
+}
+
+.darkButton {
+    border: none;
+    margin: 8px;
+    border-radius: 2px;
+    height: 40px;
+    width: 120px;
+    color: hsl(0, 0%, 84%);
+    background: rgb(31, 31, 31);
+    font-size: 20px;
+    box-shadow: 3px 2px 2px $darkNavColor, 4px 3px 2px #272727;
+    transition: 0.3s;
+    align-items: center; 
+}
+
+.lightButton {
+    border: none;
+    margin: 8px;
+    border-radius: 2px;
+    height: 40px;
+    width: 120px;
+    color: hsl(0, 0%, 84%);
+    background: rgb(31, 31, 31);
+    font-size: 20px;
+    box-shadow: 3px 2px 2px $lightNavColor, 4px 3px 2px #272727;
+    transition: 0.3s;
+    align-items: center; 
+}
+
+.lightInfo {
     font-weight: 600;
     margin-bottom: 5px;
-
-    color: rgb(104, 104, 104)
+    color: $lightTertiaryColor
 }
 
-.header {
-    color: #c00010;
+.darkInfo {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: $darkTertiaryColor
+}
+
+.lightheader {
+    color: $lightHeaderColor;
+}
+
+.darkheader {
+    color: $darkHeaderColor;
 }
 
 .moveCenter {
@@ -57,13 +141,13 @@ body {
     justify-content: space-around;
 }
 
-.container {
+.kontainer {
     width: 85%;
     margin: 20px 40px;
     padding-left: 20px;
 }
 
-.card {
+.lightcard {
     display: block;
     flex-direction: column;
     align-items: left;
@@ -75,9 +159,29 @@ body {
     box-shadow: .8px 1.3px 3px #181818ab
 }
 
-.cardLine {
+.darkcard {
+    display: block;
+    flex-direction: column;
+    align-items: left;
+    justify-items: space-around;
+    margin-bottom: 15px;
+    padding: 3px 25px 15px;
+    background: rgba(186, 236, 253, 0.795);
+    border-radius: 5px;
+    box-shadow: .8px 1.3px 3px rgb(0, 168, 224)
+}
+
+
+.lightCardLine {
     padding: 0px;
     border: 1px solid grey;
+    color: $lightTertiaryColor
+}
+
+.darkCardLine {
+    padding: 0px;
+    border: 1px solid grey;
+    color: $darkTertiaryColor
 }
 
 .noUnderline{
@@ -113,21 +217,24 @@ input {
     margin-left: 15%;
 }
 
-.lightButton {
-    border: none;
-    margin: 8px;
-    border-radius: 2px;
-    height: 40px;
-    width: 120px;
-    color: hsl(0, 0%, 84%);
-    background: rgb(31, 31, 31);
-    font-size: 20px;
-    box-shadow: 3px 2px 2px rgb(0, 0, 104), 4px 3px 2px #272727;
-    transition: 0.3s;
-    align-items: center; 
-}
 
-button:hover, .lightButton:hover {
+
+button:hover, .lightButton:hover, .darkButton:hover {
     box-shadow: 0px -4px 5px #64bedb, 0px 4px 5px #64bedb, -4px 0px 5px #64bedb, 4px 0px 5px #64bedb;
     transition: 0.3s;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
