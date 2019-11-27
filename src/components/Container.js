@@ -6,10 +6,7 @@ export class Container extends React.Component {
     render() {
         return (
             <div className="kontainer">
-                <CommentCard />
-                <CommentCard /> 
-                <CommentCard /> 
-                <CommentCard />  
+                <Card /> 
             </div>
         )
     }

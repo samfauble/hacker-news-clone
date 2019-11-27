@@ -3,7 +3,7 @@ import Container from "../components/Container"
 import React from 'react'
 import {ThemeConsumer} from "../contexts/ThemeContext"
 
-function ArticlePage({children}) {
+function ArticlePage({children}) { 
     return (
         <ThemeConsumer>
             {(theme)=>(
@@ -11,7 +11,6 @@ function ArticlePage({children}) {
                 <Navbar />
                 <h1 className={`${theme}header moveLeft`}>TitleOfArticle</h1>
                 <p className={`${theme}info moveLeft`}>Author, Date, # of comments</p>
-                <Container />
             </div>
             )}
         </ThemeConsumer>

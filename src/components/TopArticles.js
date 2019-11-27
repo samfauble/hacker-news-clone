@@ -2,6 +2,7 @@ import React from 'react'
 import ArticlePage from "./ArticlePage"
 
 function TopArticles() {
+
     return (
         <React.Fragment>
             <ArticlePage>
