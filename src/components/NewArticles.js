@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import ArticlePage from "./ArticlePage"
 import Container from "../components/Container"
 import Card from "../components/Card"
@@ -10,20 +10,38 @@ export class NewArticles extends React.Component {
         super(props)
 
         this.state = {
-         posts: null,
+         posts: [],
          error: null
         }
     }
+
+        handleFetch () {
+        {/*this.setState({
+          posts: null,
+          error: null,
+        })*/}
+    
+        fetchMainPosts("new")
+          .then((posts) => this.setState({
+            posts,
+            error: null
+          }))
+          .catch(({ message }) => this.setState({
+            error: message,
+          }, ()=>{console.warn("fetch didn't work")}))
+      }
+
+      
+    componentDidMount() {
+        this.handleFetch()
+      }
+
     render(){
         const {posts, error} = this.state
-    return (
-            <ArticlePage>
-                <Container>
-                    {error !==null ? error : null}
-                   {posts && <pre>{JSON.stringify(posts, null, 2)}</pre>}
-                </Container>
-            </ArticlePage>
-    )}
+        console.log(posts)
+    
+        return (<Container posts={posts}/>)
+    }
 }
 
 export default NewArticles
