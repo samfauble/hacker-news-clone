@@ -1,6 +1,8 @@
 import React from 'react'
 import Card from "../components/Card"
 import CommentCard from "../components/CommentCard"
+import {Route, Link} from "react-router-dom" 
+import AuthorPage from "./AuthorPage"
 
 export class Container extends React.Component {
     render() {
@@ -19,9 +21,10 @@ export class Container extends React.Component {
                     return(
                         <React.Fragment key={id}>
                             <Card 
-                            head={title}
+                            head={<a href={url}>{title}</a>}
                             username={by}
-                            time={utcString}number={descendants}/>
+                            time={utcString}
+                            number={descendants}/>
                         </React.Fragment>
                     )
                 })

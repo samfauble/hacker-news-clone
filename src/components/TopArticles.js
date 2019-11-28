@@ -1,15 +1,49 @@
 import React from 'react'
 import ArticlePage from "./ArticlePage"
+import Container from "./Container"
+import {fetchMainPosts} from "../api"
 
-function TopArticles() {
+class TopArticles extends React.Component {
 
-    return (
+    constructor(props) {
+        super(props)
+
+        this.state = {
+         posts: [],
+         error: null
+        }
+    }
+
+        handleFetch () {
+    
+        fetchMainPosts("top")
+          .then((posts) => this.setState({
+            posts,
+            error: null
+          }))
+          .catch(({ message }) => this.setState({
+            error: message,
+          }, ()=>{console.warn("fetch didn't work")}))
+      }
+
+      
+    componentDidMount() {
+        this.handleFetch()
+      }
+
+    render(){
+        const {posts, error} = this.state
+        console.log(posts)
+    
+        return (
         <React.Fragment>
-            <ArticlePage>
-                
-            </ArticlePage>
+        <ArticlePage>
+        <Container posts={posts}/>
+        </ArticlePage>
         </React.Fragment>
-    )
+        )
+    }
+
 }
 
 export default TopArticles

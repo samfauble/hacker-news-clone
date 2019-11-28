@@ -35,10 +35,11 @@ class App extends React.Component {
                 <ThemeProvider value={this.state}>
                     <div className={this.state.theme}> 
                         <div className="container">
-                            <Route exact path="/" component={TopArticles} />
-                            <Route path="/new" component={NewArticles} />
+                           {/*} <Route exact path="/" component={TopArticles} />
+                            <Route exact path="/new" component={NewArticles} />
                             <Route exact path="/compare" component={CompareInstructions} />
-                            <Route path="/compare/results" component={Results} />   
+        <Route path="/compare/results" component={Results} /> */}
+                            <Comments />   
                         </div>
                     </div>
                 </ThemeProvider>
