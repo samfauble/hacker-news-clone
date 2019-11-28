@@ -8,19 +8,25 @@ export class Container extends React.Component {
         console.log(posts)
         return (
             <div className="kontainer">
-                <ul>
+                <React.Fragment>
                 {posts.map((post)=>{
                     const {by, descendants, id, score, time, title, type, url} = post
+
+                    const dateObj = new Date(time * 1000)
+                    const utcString = dateObj.toUTCString();
+
+
                     return(
-                        <li key={id}>
-                            <h3>{title}</h3>
-                            <p>{time}<hr/>{descendants}<hr/>{by}</p>
-                            
-                        </li>
+                        <React.Fragment key={id}>
+                            <Card 
+                            head={title}
+                            username={by}
+                            time={utcString}number={descendants}/>
+                        </React.Fragment>
                     )
                 })
                 }
-                </ul>
+                </React.Fragment>
             </div>
         )
     }

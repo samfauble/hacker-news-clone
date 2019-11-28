@@ -16,10 +16,6 @@ export class NewArticles extends React.Component {
     }
 
         handleFetch () {
-        {/*this.setState({
-          posts: null,
-          error: null,
-        })*/}
     
         fetchMainPosts("new")
           .then((posts) => this.setState({
@@ -40,7 +36,13 @@ export class NewArticles extends React.Component {
         const {posts, error} = this.state
         console.log(posts)
     
-        return (<Container posts={posts}/>)
+        return (
+        <React.Fragment>
+        <ArticlePage>
+        <Container posts={posts}/>
+        </ArticlePage>
+        </React.Fragment>
+        )
     }
 }
 
