@@ -3,6 +3,7 @@ import Container from "../components/Container"
 import Navbar from "../components/Navbar"
 import {ThemeConsumer} from "../contexts/ThemeContext"
 import {fetchUser, fetchPosts} from "../api"
+import queryString from "query-string"
 
 export class AuthorPage extends React.Component {
 
@@ -17,7 +18,10 @@ export class AuthorPage extends React.Component {
     }
     
     handleFetch () {
-        fetchUser("est31")
+        
+        const {id} = queryString.parse(this.props.location.search)
+
+        fetchUser(id)
           .then((data) => {
               this.setState({
                 author:data,
@@ -53,7 +57,7 @@ export class AuthorPage extends React.Component {
                         <Navbar />
                         <h1 className={`header moveLeft`}>{id}</h1>
                         <p className="moveLeft">{`Profile created on ${utc}, has ${karma} karma`}</p>
-                        <p className="moveLeft">{about}</p>
+                        <p className="moveLeft" dangerouslySetInnerHTML={{__html: about}} />
                         <h2 className="moveLeft">Posts</h2>
                         <Container posts={this.state.posts} />}
                     </div>

@@ -17,7 +17,6 @@ export class Container extends React.Component {
                     const dateObj = new Date(time * 1000)
                     const utcString = dateObj.toUTCString();
 
-
                     return(
                         <React.Fragment key={id}>
                             <Card 

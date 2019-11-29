@@ -5,6 +5,7 @@ import {ThemeConsumer} from "../contexts/ThemeContext"
 import {fetchItem, fetchComments} from "../api"
 import {Link} from "react-router-dom"
 import CommentContainer from "./CommentContainer"
+import queryString from "query-string"
 
 
 class Comments extends React.Component {
@@ -21,7 +22,11 @@ class Comments extends React.Component {
 
       
     componentDidMount() {
-        fetchItem(21657504)
+        
+        const {id} = queryString.parse(this.props.location.search)
+        
+
+        fetchItem(id)
         .then((post) => {
             this.setState({post: post})
           return fetchComments(post.kids)
