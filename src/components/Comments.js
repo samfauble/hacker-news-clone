@@ -33,7 +33,7 @@ class Comments extends React.Component {
         })
         .then((comments) => this.setState({
           comments: comments,
-        }),()=>console.log(this.state.posts))
+        }))
         .catch(({ message }) => this.setState({
           error: message,
         }))
@@ -49,7 +49,6 @@ class Comments extends React.Component {
         const byLink= <Link to={`/user?id=${by}`}>{by}</Link>
         const commentLink = <Link to={`/post?id=${id}`}>{descendants}</Link>
 
-        console.log(comments)
      return (
         <ThemeConsumer>
             {({theme})=>(

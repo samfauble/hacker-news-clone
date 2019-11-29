@@ -34,7 +34,6 @@ export class NewArticles extends React.Component {
 
     render(){
         const {posts, error} = this.state
-        console.log(posts)
     
         return (
         <React.Fragment>

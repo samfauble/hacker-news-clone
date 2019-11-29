@@ -175,13 +175,15 @@ body {
 .lightCardLine {
     padding: 0px;
     border: 1px solid grey;
-    color: $lightTertiaryColor
+    color: $lightTertiaryColor;
+    text-decoration: none;
 }
 
 .darkCardLine {
     padding: 0px;
     border: 1px solid grey;
-    color: $darkTertiaryColor
+    color: $darkTertiaryColor;
+    text-decoration: none;
 }
 
 .noUnderline{

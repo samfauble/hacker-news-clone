@@ -7,7 +7,6 @@ import AuthorPage from "./AuthorPage"
 export class Container extends React.Component {
     render() {
         const {posts}=this.props
-        console.log(posts)
         return (
             <div className="kontainer">
                 <React.Fragment>
