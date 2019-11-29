@@ -22,6 +22,7 @@ export class Container extends React.Component {
                         <React.Fragment key={id}>
                             <Card 
                             head={<a href={url}>{title}</a>}
+                            id={id}
                             username={by}
                             time={utcString}
                             number={descendants}/>

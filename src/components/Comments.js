@@ -3,6 +3,7 @@ import Container from "../components/Container"
 import Navbar from "./Navbar"
 import {ThemeConsumer} from "../contexts/ThemeContext"
 import {fetchItem, fetchComments} from "../api"
+import {Link} from "react-router-dom"
 import CommentContainer from "./CommentContainer"
 
 
@@ -38,7 +39,11 @@ class Comments extends React.Component {
 
     render() {
         const {post, error, comments} = this.state
-        const {by, time, title, descendants} = post
+        const {id, by, time, title, descendants} = post
+
+        const byLink= <Link to={`/user?id=${by}`}>{by}</Link>
+        const commentLink = <Link to={`/post?id=${id}`}>{descendants}</Link>
+
         console.log(comments)
      return (
         <ThemeConsumer>
@@ -46,7 +51,7 @@ class Comments extends React.Component {
                 <div>
                     <Navbar />
                     <h1 className={`${theme}header moveLeft`}>{title}</h1>
-                    <p className="moveLeft">{`by ${by} on ${time} with ${descendants} comments`}</p>
+                    <p className="moveLeft">{<span>by {byLink} on {time} with {commentLink} comments</span>}</p>
                     <CommentContainer posts={comments} />
                 </div>
             )}
