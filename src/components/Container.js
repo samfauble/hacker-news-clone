@@ -27,7 +27,7 @@ export class Container extends React.Component {
                         </React.Fragment>
                     )
                 })
-                }
+            }
                 </React.Fragment>
             </div>
         )

@@ -2,7 +2,7 @@ import React from 'react'
 import {fetchMainPosts} from "../api"
 
 export default function useFetchMainPosts(type) {
-    const [posts, setPosts] = React.useState({})
+    const [posts, setPosts] = React.useState([])
     const [error, setError] = React.useState(null)
     const [isLoading, setIsLoading] = React.useState(true)
 

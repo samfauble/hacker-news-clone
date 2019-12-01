@@ -10,7 +10,6 @@ import {ThemeConsumer} from "../contexts/ThemeContext"
 function TopArticles () {
   const [posts, error, isLoading] = useFetchMainPosts("top")
 
-    
         return (
           <ThemeConsumer>
             {({theme})=>(
