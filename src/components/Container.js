@@ -19,8 +19,8 @@ export class Container extends React.Component {
                     return(
                         <React.Fragment key={id}>
                             <Card 
-                            head={<a href={url}>{title}</a>}
-                            id={id}
+                            head={<a className="noUnderline artLink" href={url}>{title}</a>}
+                            id= {id}
                             username={by}
                             time={utcString}
                             number={descendants}/>

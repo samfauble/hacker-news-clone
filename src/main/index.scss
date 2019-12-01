@@ -4,7 +4,7 @@ $lightTertiaryColor:  rgb(175, 0, 15) ;
 $lightNavColor: #0d0d4b;
 
 $darkBackgroundColor: #0d0d4b;
-$darkHeaderColor:  red;
+$darkHeaderColor:  rgb(26, 195, 252);
 $darkTertiaryColor:  rgb(153, 43, 52);
 $darkNavColor:#beecfc;
 
@@ -174,20 +174,27 @@ body {
 
 .lightCardLine {
     padding: 0px;
-    border: 1px solid grey;
     color: $lightTertiaryColor;
     text-decoration: none;
 }
 
 .darkCardLine {
     padding: 0px;
-    border: 1px solid grey;
     color: $darkTertiaryColor;
     text-decoration: none;
 }
 
 .noUnderline{
     text-decoration: none;
+}
+
+.noUnderline:hover {
+    transition: 0.3s;
+    text-shadow: 1.5px 1.5px 2px #446fcc, 
+}
+
+.artLink {
+    color: rgb(26, 26, 26)
 }
 
 //CompareInstructions
@@ -218,7 +225,6 @@ input {
     border-radius: 3px;
     margin-left: 15%;
 }
-
 
 
 button:hover, .lightButton:hover, .darkButton:hover {

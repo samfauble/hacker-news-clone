@@ -6,18 +6,23 @@ import {fetchMainPosts} from "../api"
 import Navbar from "./Navbar"
 import useFetchMainPosts from "./useFetchMainPosts"
 import Loading from "./Loading"
+import {ThemeConsumer} from "../contexts/ThemeContext"
 
 export function NewArticles () {
   const [posts, error, isLoading] = useFetchMainPosts("new")
 
-        return (
-        <React.Fragment>
-          <Navbar />
-          <h1 className={`header moveLeft`}>New Articles</h1>
-          {isLoading===true && <Loading />}
-        <Container posts={posts}/>
-        </React.Fragment>
-        )
+  return (
+    <ThemeConsumer>
+      {({theme})=>(
+          <React.Fragment>
+            <Navbar />
+            <h1 className={`${theme}header moveLeft`}>New Articles</h1>
+            {isLoading===true && <Loading />}
+            <Container posts={posts}/>
+          </React.Fragment>
+      )}
+  </ThemeConsumer>
+  )
 }
 
 export default NewArticles
