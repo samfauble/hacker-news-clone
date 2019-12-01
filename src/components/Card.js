@@ -4,8 +4,9 @@ import {Link} from "react-router-dom"
 
 function Card({id, head, username, time, number}) {
 
-    const byLink = <Link to={`/user?id=${username}`}>{username}</Link>
-    const commentLink = <Link style={{textDecoration: "none"}} to={{pathname: `/post?id=${id}`}}>{number}</Link>
+    const byLink = <Link style={{textDecoration: "none", color: "#000", fontWeight: "bold"}} to={{pathname: `/post?id=${id}`}} to={`/user?id=${username}`}>{username}</Link>
+    const commentLink = <Link style={{textDecoration: "none", color: "#000", fontWeight: "bold"}} to={{pathname: `/post?id=${id}`}}>{number}</Link>
+
     return (
         <ThemeConsumer>
             {({theme})=>(
