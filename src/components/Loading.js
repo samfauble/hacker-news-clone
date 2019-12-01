@@ -1,11 +1,9 @@
 import React from 'react'
 
-export class Loading extends Component {
+export class Loading extends React.Component {
     render() {
         return (
-            <div>
-               Loading 
-            </div>
+            <h2>LOADING</h2>
         )
     }
 }
