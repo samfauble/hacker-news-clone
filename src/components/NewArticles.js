@@ -3,46 +3,19 @@ import ArticlePage from "./ArticlePage"
 import Container from "../components/Container"
 import Card from "../components/Card"
 import {fetchMainPosts} from "../api"
+import Navbar from "./Navbar"
+import useFetchMainPosts from "./useFetchMainPosts"
 
-export class NewArticles extends React.Component {
+export function NewArticles () {
+  const [posts, error] = useFetchMainPosts("new")
 
-    constructor(props) {
-        super(props)
-
-        this.state = {
-         posts: [],
-         error: null
-        }
-    }
-
-        handleFetch () {
-    
-        fetchMainPosts("new")
-          .then((posts) => this.setState({
-            posts,
-            error: null
-          }))
-          .catch(({ message }) => this.setState({
-            error: message,
-          }, ()=>{console.warn("fetch didn't work")}))
-      }
-
-      
-    componentDidMount() {
-        this.handleFetch()
-      }
-
-    render(){
-        const {posts, error} = this.state
-    
         return (
         <React.Fragment>
-        <ArticlePage>
+          <Navbar />
+          <h1 className={`header moveLeft`}>New Articles</h1>
         <Container posts={posts}/>
-        </ArticlePage>
         </React.Fragment>
         )
-    }
 }
 
 export default NewArticles

@@ -2,46 +2,20 @@ import React from 'react'
 import ArticlePage from "./ArticlePage"
 import Container from "./Container"
 import {fetchMainPosts} from "../api"
+import Navbar from "./Navbar"
+import useFetchMainPosts from "./useFetchMainPosts"
 
-class TopArticles extends React.Component {
+function TopArticles () {
+  const [posts, error] = useFetchMainPosts("top")
 
-    constructor(props) {
-        super(props)
-
-        this.state = {
-         posts: [],
-         error: null
-        }
-    }
-
-        handleFetch () {
-    
-        fetchMainPosts("top")
-          .then((posts) => this.setState({
-            posts,
-            error: null
-          }))
-          .catch(({ message }) => this.setState({
-            error: message,
-          }, ()=>{console.warn("fetch didn't work")}))
-      }
-
-      
-    componentDidMount() {
-        this.handleFetch()
-      }
-
-    render(){
-        const {posts, error} = this.state
     
         return (
         <React.Fragment>
-        <ArticlePage>
+          <Navbar />
+           <h1 className={`header moveLeft`}>Top Articles</h1>
         <Container posts={posts}/>
-        </ArticlePage>
         </React.Fragment>
         )
-    }
 
 }
 

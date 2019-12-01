@@ -2,17 +2,21 @@ import Navbar from "../components/Navbar"
 import Container from "../components/Container"
 import React from 'react'
 import {ThemeConsumer} from "../contexts/ThemeContext"
+import useFetchMainPosts from "./useFetchMainPosts"
 
-function ArticlePage({children}) { 
+
+function ArticlePage () { 
+    const [posts, error] = useFetchMainPosts("new")
+   
+    
     return (
         <ThemeConsumer>
             {(theme)=>(
-                <div>
-                <Navbar />
-                <h1 className={`${theme}header moveLeft`}>TitleOfArticle</h1>
-                <p className={`${theme}info moveLeft`}>Author, Date, # of comments</p>
-                {children}
-            </div>
+                <React.Fragment>
+                    <Navbar />
+                    <h1 className={`header moveLeft`}>New Articles</h1>
+                    <Container posts={posts}/>
+                </React.Fragment>
             )}
         </ThemeConsumer>
     )
