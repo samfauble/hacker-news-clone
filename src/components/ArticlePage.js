@@ -16,6 +16,7 @@ function ArticlePage () {
                     <Navbar />
                     <h1 className={`header moveLeft`}>New Articles</h1>
                     <Container posts={posts}/>
+                    {error !== null && <h2>{error}</h2>}
                 </React.Fragment>
             )}
         </ThemeConsumer>

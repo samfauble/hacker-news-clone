@@ -10,24 +10,24 @@ export class Container extends React.Component {
         return (
             <div className="kontainer">
                 <React.Fragment>
-                {posts.map((post)=>{
-                    const {by, descendants, id, score, time, title, type, url} = post
+                    {posts.map((post)=>{
+                        const {by, descendants, id, score, time, title, type, url} = post
 
-                    const dateObj = new Date(time * 1000)
-                    const utcString = dateObj.toUTCString();
+                        const dateObj = new Date(time * 1000)
+                        const utcString = dateObj.toUTCString();
 
-                    return(
-                        <React.Fragment key={id}>
-                            <Card 
-                            head={<a className="noUnderline artLink" href={url}>{title}</a>}
-                            id= {id}
-                            username={by}
-                            time={utcString}
-                            number={descendants}/>
-                        </React.Fragment>
-                    )
-                })
-            }
+                        return(
+                            <React.Fragment key={id}>
+                                <Card 
+                                    head={<a className="noUnderline artLink" href={url}>{title}</a>}
+                                    id= {id}
+                                    username={by}
+                                    time={utcString}
+                                    number={descendants}/>
+                            </React.Fragment>
+                        )
+                    })
+                    }
                 </React.Fragment>
             </div>
         )

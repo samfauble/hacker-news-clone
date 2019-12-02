@@ -10,13 +10,14 @@ export default function useFetchMainPosts(type) {
         setIsLoading(true)
         fetchMainPosts(type)
           .then((posts) => setPosts(posts), setError(null), setIsLoading(false))
-          .catch(({ message }) => setError(message), setIsLoading(false))
+          .catch(({ message }) => console.warn(message), setError("Oops, we couldn't get your articles. Sorry!"), setIsLoading(false))
       }
 
       
     React.useEffect(()=>{
         handleFetch()
-    },[type]) 
+        },[type]
+    ) 
         
       
     return [posts, error, isLoading]

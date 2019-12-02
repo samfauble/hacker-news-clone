@@ -1,7 +1,5 @@
 import React from 'react'
-import ArticlePage from "./ArticlePage"
 import Container from "./Container"
-import {fetchMainPosts} from "../api"
 import Navbar from "./Navbar"
 import useFetchMainPosts from "./useFetchMainPosts"
 import Loading from "./Loading"
@@ -17,7 +15,8 @@ function TopArticles () {
                   <Navbar />
                   <h1 className={`${theme}header moveLeft`}>Top Articles</h1>
                   {isLoading===true && <Loading />}
-                  <Container posts={posts}/>
+                  {error!==null & posts===null ? <h2>{error}</h2> : <Container posts={posts} />}
+                  
                 </React.Fragment>
             )}
         </ThemeConsumer>

@@ -14,22 +14,22 @@ function Results(props) {
                     <h1 className={`${theme}Header moveCenter`}>Results</h1>
                     <div className="instructions spaceAround">
                         <Card
-                        head="Winner"
-                        info ="">
-                            <FaCrown size={150} />
+                            head="Winner"
+                            info ="">
+                                <FaCrown size={150} />
                         </Card>
                         <Card
-                        head="Loser"
-                        info="">
-                            <FaSadCry size={150} />
+                            head="Loser"
+                            info="">
+                                <FaSadCry size={150} />
                         </Card>
                     </div>
                     <Link
-                    to="/compare" 
-                    className={`${theme}Button moveCenter`}
-                    style={{margin: "auto",
-                    marginTop: 80}}>
-                        Reset
+                        to="/compare" 
+                        className={`${theme}Button moveCenter`}
+                        style={{margin: "auto",
+                        marginTop: 80}}>
+                            Reset
                     </Link>
                 </React.Fragment>
             )}

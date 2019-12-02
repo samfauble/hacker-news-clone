@@ -18,7 +18,7 @@ export function NewArticles () {
             <Navbar />
             <h1 className={`${theme}header moveLeft`}>New Articles</h1>
             {isLoading===true && <Loading />}
-            <Container posts={posts}/>
+            {error !== null & posts===null ? <h2>{error}</h2> : <Container posts={posts}/>} 
           </React.Fragment>
       )}
   </ThemeConsumer>

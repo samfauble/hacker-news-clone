@@ -9,9 +9,9 @@ export function CommentContainer(props) {
                 {props.posts.map((post)=>(
                     <React.Fragment key={post.id}>
                         <CommentCard
-                        commenter={post.by}
-                        date={post.time}>
-                            {post.text}
+                            commenter={post.by}
+                            date={post.time}>
+                                {post.text}
                         </CommentCard>
                     </React.Fragment>
                 ))}
